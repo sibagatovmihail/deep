@@ -1346,13 +1346,6 @@ h6 {
   }
 }
 
-@media (max-width: 62.49875em) {
-  [class*=__container] {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
-  }
-}
-
 @media (max-width: 61.99875em) {
   .loaded .lifting_async:nth-child(2n+2) {
     -webkit-transition-delay: 0s;
@@ -1474,7 +1467,6 @@ h6 {
   }
 
   .main__image {
-    margin-left: -0.9375rem;
     padding-bottom: 70%;
   }
 
@@ -1930,6 +1922,32 @@ h6 {
 }
 }
 
+@media (min-width: 20em) and (max-width: 62.49875em) {
+@supports (padding-right: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem )) {
+    [class*=__container] {
+      padding-right: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem )) {
+    [class*=__container] {
+      padding-right: calc(0.9375rem + 0.0625 * (100vw - 20rem) / 42.49875);
+    }
+}
+
+@supports (padding-left: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem )) {
+    [class*=__container] {
+      padding-left: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.9375rem , 0.9080873702rem  +  0.1470631489vw , 1rem )) {
+    [class*=__container] {
+      padding-left: calc(0.9375rem + 0.0625 * (100vw - 20rem) / 42.49875);
+    }
+}
+}
+
 @media (min-width: 48em) and (max-width: 90em) {
 @supports (padding-right: clamp( 2.5rem , -3.7142857143rem  +  12.9464285714vw , 7.9375rem )) {
     .main__body {
@@ -1940,6 +1958,20 @@ h6 {
 @supports not (padding-right: clamp( 2.5rem , -3.7142857143rem  +  12.9464285714vw , 7.9375rem )) {
     .main__body {
       padding-right: calc(2.5rem + 5.4375 * (100vw - 48rem) / 42);
+    }
+}
+}
+
+@media (min-width: 20em) and (max-width: 47.99875em) {
+@supports (margin-left: clamp( -1.25rem , -0.7142757489rem  +  -1.1161212554vw , -0.9375rem )) {
+    .main__image {
+      margin-left: clamp( -1.25rem , -0.7142757489rem  +  -1.1161212554vw , -0.9375rem );
+    }
+}
+
+@supports not (margin-left: clamp( -1.25rem , -0.7142757489rem  +  -1.1161212554vw , -0.9375rem )) {
+    .main__image {
+      margin-left: calc(-0.9375rem + -0.3125 * (100vw - 20rem) / 27.99875);
     }
 }
 }
